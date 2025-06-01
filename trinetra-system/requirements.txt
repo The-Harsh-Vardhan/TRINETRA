@@ -1,0 +1,51 @@
+# Core dependencies
+numpy>=1.21.0
+opencv-python>=4.5.0
+torch>=1.9.0
+torchvision>=0.10.0
+
+# Deep learning models
+tensorflow>=2.6.0
+ultralytics  # For YOLOv8
+deepface>=0.0.75
+face-recognition>=1.3.0
+supervision>=0.3.0  # For ByteTrack and detection visualization
+
+# Tracking
+deep-sort-realtime>=1.3.0
+ByteTrack
+
+# OCR and text recognition
+paddleocr>=2.6.0
+pytesseract>=0.3.8
+
+# Image captioning and description
+transformers>=4.11.0
+clip @ git+https://github.com/openai/CLIP.git
+pillow>=8.3.0
+
+# Backend and data handling
+flask>=2.0.0
+sqlalchemy>=1.4.0
+pandas>=1.3.0
+python-dotenv>=0.19.0
+
+# Utilities
+tqdm>=4.62.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Backend dependencies
+fastapi>=0.68.0
+uvicorn>=0.15.0
+sqlalchemy>=1.4.0
+pymongo>=4.0.0
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.5
+pydantic>=1.8.0
+motor>=2.5.0
+
+# Frontend dependencies
+streamlit>=1.0.0
+plotly>=5.3.0

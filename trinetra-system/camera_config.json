@@ -1,0 +1,36 @@
+{
+    "cameras": [
+        {
+            "id": 0,
+            "source": "./test_videos/entrance.mp4",
+            "type": "entrance",
+            "description": "Main entrance video feed"
+        },
+        {
+            "id": 1,
+            "source": "./test_videos/store.mp4",
+            "type": "store",
+            "description": "Store area video feed"
+        },
+        {
+            "id": 2,
+            "source": "./test_videos/billing.mp4",
+            "type": "billing",
+            "description": "Billing counter video feed"
+        },
+        {
+            "id": 3,
+            "source": "rtsp://192.168.1.102:554/stream1",
+            "type": "parking",
+            "description": "Parking area camera"
+        }
+    ],
+    "settings": {
+        "frame_rate": 30,
+        "resolution": {
+            "width": 1280,
+            "height": 720
+        },
+        "save_path": "recordings/"
+    }
+}
