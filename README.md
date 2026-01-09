@@ -14,7 +14,7 @@ TRINETRA is an **exploratory computer vision project** investigating the feasibi
 
 ---
 
-## 🎯 Research Objectives
+## Research Objectives
 
 This project explores key research questions in computer vision system design:
 
@@ -26,7 +26,7 @@ This project explores key research questions in computer vision system design:
 
 ---
 
-## 🔬 Technical Exploration Areas
+## Technical Exploration Areas
 
 ### **Core Modules Investigated**
 
@@ -43,7 +43,7 @@ This project explores key research questions in computer vision system design:
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -81,7 +81,7 @@ This project explores key research questions in computer vision system design:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 TRINETRA/
@@ -98,7 +98,7 @@ TRINETRA/
 
 ---
 
-## 🧪 Key Findings & Learnings
+## Key Findings & Learnings
 
 ### **Technologies That Proved Reliable**
 ✅ **YOLOv8** is well-established for real-time person detection in surveillance contexts  
@@ -121,7 +121,7 @@ TRINETRA/
 
 ---
 
-## 🔧 Installation & Experimentation
+## Installation & Experimentation
 
 ### Prerequisites
 ```bash
@@ -160,7 +160,7 @@ python "3. Customer Journey Tracker Module/multi_camera_tracker.py"
 
 ---
 
-## 🚧 Limitations & Future Work
+## Limitations & Future Work
 
 ### **Current Limitations**
 - Not tested on large-scale datasets (limited to synthetic + self-recorded footage)
@@ -178,7 +178,7 @@ python "3. Customer Journey Tracker Module/multi_camera_tracker.py"
 
 ---
 
-## 🔐 Privacy & Ethical Considerations
+## Privacy & Ethical Considerations
 
 This project prioritizes **ethical AI development**:
 - Face embeddings stored as 512-dim vectors (not raw images)
