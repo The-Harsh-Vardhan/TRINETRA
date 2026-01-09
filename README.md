@@ -1,4 +1,4 @@
-# 🧠 TRINETRA
+# TRINETRA
 ### **T**argeted **R**etail **I**nsights via **NET**worked **R**eal-time **A**nalytics
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
