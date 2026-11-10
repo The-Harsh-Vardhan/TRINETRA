@@ -14,6 +14,36 @@ TRINETRA is an **exploratory computer vision project** investigating the feasibi
 
 ---
 
+Docs: https://the-harsh-vardhan.github.io/TRINETRA/
+
+## What it does
+
+- **Entrance counting**: YOLOv8 person detection with centroid tracking and a virtual line to count people in and out (`people_counter.py`)
+- **Face recognition**: encodes known faces with `face_recognition` into `faces.pkl` and matches faces from a live feed
+- **Billing matcher**: links a recognised face at the billing counter to an order record (order data is simulated in the script)
+- **Scene description**: YOLOv8 crops captioned with BLIP for attire and objects
+- **Vehicle and emotion modules**: YOLOv8 + EasyOCR for plate text, DeepFace for emotion
+- **Behavioral log**: entry, billing and exit timestamps per customer (simulated visit log)
+
+## Architecture (as implemented)
+
+```mermaid
+flowchart LR
+    C1[Entrance camera] --> E[YOLOv8 person detection + centroid tracker]
+    E --> IO[In / out line-crossing counts]
+    C2[Face / billing camera] --> F[face_recognition encodings vs faces.pkl]
+    F --> B[Billing matcher: face to order record]
+    C3[Scene camera] --> A[YOLOv8 crops + BLIP captions]
+    C4[Vehicle camera] --> V[YOLOv8 + EasyOCR plate text]
+    C5[Face camera] --> M[DeepFace emotion analysis]
+    B --> L[Visit log: entry, billing, exit times]
+    IO --> L
+```
+
+Each module is a standalone script; the modules are not yet wired into one pipeline, and billing and visit-log data are simulated.
+
+---
+
 ## Research Objectives
 
 This project explores key research questions in computer vision system design:
@@ -43,7 +73,9 @@ This project explores key research questions in computer vision system design:
 
 ---
 
-## System Architecture
+## Target System Design
+
+The full design this project explores (modules 1-8 implement parts of it as standalone scripts; see the diagram above for what exists in code):
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -85,15 +117,16 @@ This project explores key research questions in computer vision system design:
 
 ```
 TRINETRA/
-├── 1. Entrance Count Module/          # People detection & line-crossing logic
-├── 2. Face Recognition Module/        # Face embedding & matching experiments
-├── 3. Customer Journey Tracker/       # Multi-camera re-identification
-├── 4. Billing Counter Matcher/        # POS integration & face-bill linking
-├── 5. Object and Attire Description/  # CLIP/BLIP-based scene understanding
-├── 6. Behavioral Insights Module/     # Analytics & metrics computation
-├── 7. Vehicle Monitoring Module/      # License plate recognition (LPR)
-├── 8. Emotion Detection Module/       # Facial expression analysis
-└── Project_Proposal.md                # Detailed technical documentation
+├── 1. Entrance Count Module/                      # people_counter.py: YOLOv8 + centroid tracking + line crossing
+├── 2. Face Recognition and Identification Module/ # save_new_face.py, face_recognition_main.py, faces.pkl
+├── 3. Customer Journey Tracker Module/            # multi_camera_tracker.py (face-encoding step)
+├── 4. Billing Counter Matcher Module/             # billing_face_matcher.py (simulated order data)
+├── 5. Object and Attire Description Module/       # attire_description.py: YOLOv8 + BLIP captions
+├── 6. Behavioral Insights Module/                 # behavior_analytics.py (simulated visit log)
+├── 7. Vehicle Monitering Module/                  # vehicle_recognition.py: YOLOv8 + EasyOCR
+├── 8. Emotion Detection Module/                   # emotion_recognition.py: DeepFace
+├── Project_Description.md                         # Project objectives and module descriptions
+└── Project_Proposal.txt                           # Original proposal
 ```
 
 ---
@@ -132,7 +165,7 @@ CUDA Toolkit (optional, for GPU acceleration)
 ### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/TRINETRA.git
+git clone https://github.com/The-Harsh-Vardhan/TRINETRA.git
 cd TRINETRA
 
 # Create virtual environment
@@ -205,7 +238,7 @@ Key papers and resources that guided this exploration:
 
 ## 📄 License
 
-MIT License — Free for educational and research use.
+MIT License — Free for educational and research use. (A LICENSE file has not been added to the repo yet; tracked in #3.)
 
 ---
 
